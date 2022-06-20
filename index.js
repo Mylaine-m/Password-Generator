@@ -7,6 +7,7 @@ let secondPassword = ""
 let passwordLength = 15
 let firstPasswordEl = document.getElementById("first-password-el")
 let secondPasswordEl = document.getElementById("second-password-el")
+let passwordLengthEl = document.getElementById("password-lenght-el")
 
 
 function getRandomCharacter() {
@@ -25,10 +26,9 @@ function getRandomPassword() {
 function generatePasswords() {
     firstPassword = getRandomPassword()
     firstPasswordEl.textContent = firstPassword
-    
+
     secondPassword = getRandomPassword()
     secondPasswordEl.textContent = secondPassword
 }
-
 
 
