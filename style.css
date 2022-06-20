@@ -5,7 +5,7 @@ body {
 }
 
 #container {
-    width: 550px;
+    width: 446px;
     height: 550px;
     margin: 64px auto;
 }
@@ -52,8 +52,23 @@ hr {
     margin-bottom: 35px;
 }
 
-p {
-    background: #273549;;
-    color: #5DEF92;
+#items {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        text-align: center;
+}
 
+
+p {
+    background: #273549;
+    border: none;
+    border-radius: 6px;
+    color: #5DEF92;
+    width: 185px;
+    font-size: 16px;
+    line-height: 39px;
+    height: 39px;
+    padding: 4px 16px 3px 10px;
+    margin: 0;
 }
