@@ -6,8 +6,8 @@ let firstPassword = ""
 let secondPassword = ""
 let passwordLength = 15
 let firstPasswordEl = document.getElementById("first-password-el")
-let secondPasswordEl = document.getElementById("second-password-el")
-let passwordLengthEl = document.getElementById("password-lenght-el")
+const secondPasswordEl = document.getElementById("second-password-el")
+const passwordLengthEl = document.getElementById("password-lenght-el")
 
 
 function getRandomCharacter() {
@@ -23,12 +23,28 @@ function getRandomPassword() {
     return password
 }
 
+function copyOnclick(password) {
+    password.onclick = function() {
+        document.execCommand("copy");
+      }
+      
+      password.addEventListener("copy", function(event) {
+        event.preventDefault();
+        if (event.clipboardData) {
+          event.clipboardData.setData("text/plain", password.textContent);
+          console.log(event.clipboardData.getData("text"))
+
+        }
+      });
+}
+
 function generatePasswords() {
     firstPassword = getRandomPassword()
     firstPasswordEl.textContent = firstPassword
-
+    copyOnclick(firstPasswordEl)
     secondPassword = getRandomPassword()
     secondPasswordEl.textContent = secondPassword
+    copyOnclick(secondPasswordEl)
 }
 
 
