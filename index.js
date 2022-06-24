@@ -4,10 +4,10 @@ const characters =
 
 let firstPassword = ""
 let secondPassword = ""
-let passwordLength = 15
-let firstPasswordEl = document.getElementById("first-password-el")
+const lengthEl = document.getElementById("length-el")
+const firstPasswordEl = document.getElementById("first-password-el")
 const secondPasswordEl = document.getElementById("second-password-el")
-const passwordLengthEl = document.getElementById("password-lenght-el")
+const errorEl = document.getElementById("error-el")
 
 
 function getRandomCharacter() {
@@ -17,34 +17,42 @@ function getRandomCharacter() {
 
 function getRandomPassword() {
     let password = ""
-    for (let i = 0; i < passwordLength; i++) {
-        password += getRandomCharacter()
-    }
-    return password
-}
+    let passwordLength = lengthEl.value
+    let errorMessage = "Please choose a number between 6 and 20"
 
-function copyOnclick(password) {
-    password.onclick = function() {
-        document.execCommand("copy");
-      }
-      
-      password.addEventListener("copy", function(event) {
-        event.preventDefault();
-        if (event.clipboardData) {
-          event.clipboardData.setData("text/plain", password.textContent);
-          console.log(event.clipboardData.getData("text"))
-
+    if (passwordLength > 5 && passwordLength < 21 ) {
+        
+        for (let i = 0; i < passwordLength; i++) {
+            password += getRandomCharacter()
         }
-      });
+        return password
+    } else {
+        errorEl.textContent = errorMessage
+    }
 }
 
 function generatePasswords() {
     firstPassword = getRandomPassword()
     firstPasswordEl.textContent = firstPassword
     copyOnclick(firstPasswordEl)
+
     secondPassword = getRandomPassword()
     secondPasswordEl.textContent = secondPassword
     copyOnclick(secondPasswordEl)
 }
 
+// copy password on click feature
+function copyOnclick(password) {
+    password.onclick = function() {
+        document.execCommand("copy");
+      }
+      password.addEventListener("copy", function(event) {
+        event.preventDefault()
+        if (event.clipboardData) {
+          event.clipboardData.setData("text/plain", password.textContent)
+          console.log(event.clipboardData.getData("text"))
+
+        }
+      })
+}
 

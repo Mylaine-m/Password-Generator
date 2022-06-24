@@ -33,12 +33,32 @@ h2 {
     line-height: 28px;
     margin: 5px 0;
 }
+#form {
+    color: #273549;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 35px;
+}
+
+#length-el {
+    background: #FFFFFF;
+    border: 2px solid #273549;
+    border-radius: 4px;
+    color: #273549;
+    padding: 5px 10px;
+    width: 48px;
+    text-align: center;
+}
 
 button {
     background: #10B981;
     border: none;
     border-radius: 6px;
     color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -59,16 +79,15 @@ hr {
         text-align: center;
 }
 
-
-p {
+.password {
     background: #273549;
     border: none;
     border-radius: 6px;
     color: #5DEF92;
-    width: 185px;
     font-size: 16px;
-    line-height: 39px;
     height: 39px;
-    padding: 4px 16px 3px 10px;
+    line-height: 39px;
     margin: 0;
+    padding: 4px 16px 3px 10px;
+    width: 185px;
 }

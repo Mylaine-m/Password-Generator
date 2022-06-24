@@ -15,13 +15,20 @@
 
 <body>
     <div id="container">
+        
         <h1>Generate a <span>random password</span></h1>
         <h2>Never use an insecure password again.</h2>
+        <div id="form">
+            <label for="length-el" id="error-el">Choose your password lenght between 6 and 30</label>
+            <input type="number" id="length-el" min="6" max="20" placeholder="15">
+            
+        </div>
+    
         <button onclick="generatePasswords()">Generate passwords</button>
         <hr>
         <div id="items">
-            <p id="first-password-el"></p>
-            <p id="second-password-el"></p>
+            <p class="password" id="first-password-el"></p>
+            <p class="password" id="second-password-el"></p>
         </div>
         
     </div>
